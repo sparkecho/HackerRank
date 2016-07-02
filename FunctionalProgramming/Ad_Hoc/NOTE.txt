@@ -1,0 +1,9 @@
+Status of the unfinished questions
+
+Kundu And Bubble Wrap
+Mangoes
+Game of Kyles
+Subset Sum				 5/18 (13 timeout)
+Elementary Watson
+Puzzle and PC
+[Approximate Challenge] Convolutional Coding
