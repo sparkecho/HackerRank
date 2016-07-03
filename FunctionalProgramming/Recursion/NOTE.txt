@@ -1,0 +1,12 @@
+Status of the unfinished questions
+
+"Functions and Fractals: Sierpinski triangles"	
+"Functions and Fractals - Recursive Trees"		
+"Convex Hull"  			  						
+"Crosswords-101"								
+"Super-Queens on a Chessboard"					
+"The Sums of Powers"							
+"Filter Elements"								8/9 (one timeout)
+"Super Digit"									
+"The Tree Of Life"								
+"Concave Polygon"								13/24
