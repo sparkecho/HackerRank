@@ -1,0 +1,72 @@
+;; Project Euler #11: Largest product in a grid
+
+
+(defun make-matrix ()
+  (let ((mx (make-array '(20 20) :element-type 'integer :initial-element 0)))
+	(dotimes (i 20)
+	  (dotimes (j 20)
+		(setf (aref mx i j) (read))))
+	mx))
+
+
+(defun max-product (mx)
+  (max (max-in-row mx)
+	   (max-in-col mx)
+	   (max-up-diagonal mx)
+	   (max-down-diagonal mx)))
+
+(defun max-in-row (mx)
+  (let ((maxval 0))
+	(dotimes (i 20)
+	  (do ((j 19 (- j 1)))
+		  ((< j 3))
+		(let ((val (* (aref mx i j)
+					  (aref mx i (- j 1))
+					  (aref mx i (- j 2))
+					  (aref mx i (- j 3)))))
+		  (when (> val maxval)
+			(setf maxval val)))))
+	maxval))
+
+
+(defun max-in-col (mx)
+  (let ((maxval 0))
+	(dotimes (j 20)
+	  (do ((i 19 (- i 1)))
+		  ((< i 3))
+		(let ((val (* (aref mx i j)
+					  (aref mx (- i 1) j)
+					  (aref mx (- i 2) j)
+					  (aref mx (- i 3) j))))
+		  (when (> val maxval)
+			(setf maxval val)))))
+	maxval))
+
+
+(defun max-up-diagonal (mx)
+  (let ((maxval 0))
+	(dotimes (i 17)
+	  (dotimes (j 17)
+		(let ((val (* (aref mx i j)
+					  (aref mx (+ i 1) (+ j 1))
+					  (aref mx (+ i 2) (+ j 2))
+					  (aref mx (+ i 3) (+ j 3)))))
+		  (when (> val maxval)
+			(setf maxval val)))))
+	maxval))
+
+
+(defun max-down-diagonal (mx)
+  (let ((maxval 0))
+	(do ((i 19 (- i 1)))
+		((< i 3))
+	  (dotimes (j 17)
+		(let ((val (* (aref mx i j)
+					  (aref mx (- i 1) (+ j 1))
+					  (aref mx (- i 2) (+ j 2))
+					  (aref mx (- i 3) (+ j 3)))))
+		  (when (> val maxval)
+			(setf maxval val)))))
+	maxval))
+
+(format t "~D~%" (max-product (make-matrix)))
