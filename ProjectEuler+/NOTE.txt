@@ -1,0 +1,5 @@
+Status of unsolved problems
+
+#1: Multiples of 3 and 5					4/6
+#9: Special Pythagorean triplet				3/8 (4 timeout)
+#12: Highly divisible triangular number		6/8
