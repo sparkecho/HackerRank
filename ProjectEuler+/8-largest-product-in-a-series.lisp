@@ -1,0 +1,28 @@
+(defun largest-product (n k num)
+  (let* ((len 1001)
+		 (arr (make-array len :element-type 'number :initial-element 0))
+		 (maxval 0))
+    (store-digit n arr num)
+	(do* ((lo 0 (+ lo 1))
+		  (hi (1- k) (1- (+ lo k))))
+		 ((> hi n) maxval)
+	  (let ((val (arr* arr lo hi)))
+		(when (> val maxval)
+		  (setf maxval val))))))
+
+
+(defun store-digit (n arr num)
+  (do* ((i 0 (1+ i))
+		(r (rem num 10) (rem p 10))
+		(p (/ (- num r) 10) (/ (- p r) 10)))
+	   ((= i n))
+	(setf (aref arr i) r)))
+
+(defun arr* (arr lo hi)
+  (if (= lo hi)
+	  (aref arr lo)
+	  (* (aref arr lo)
+		 (arr* arr (1+ lo) hi))))
+
+(dotimes (i (read))
+  (format t "~D~%" (largest-product (read) (read) (read))))
