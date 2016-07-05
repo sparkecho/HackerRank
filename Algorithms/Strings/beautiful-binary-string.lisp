@@ -1,4 +1,4 @@
-(defun bbs (str len)
+(defun bbs (len str)
   (do ((i 2 (+ i 1))
 	   (acc 0))
 	  ((>= i len) acc)
