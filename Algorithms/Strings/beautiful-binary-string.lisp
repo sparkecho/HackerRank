@@ -1,0 +1,11 @@
+(defun bbs (str len)
+  (do ((i 2 (+ i 1))
+	   (acc 0))
+	  ((>= i len) acc)
+	(when (and (char= (char str i) #\0)
+			   (char= (char str (- i 1)) #\1)
+			   (char= (char str (- i 2)) #\0))
+	  (setf (char str i) #\1)
+	  (incf acc))))
+
+(format t "~A" (bbs (read) (read-line)))
