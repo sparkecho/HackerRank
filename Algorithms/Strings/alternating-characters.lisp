@@ -1,0 +1,10 @@
+(defun make-alter (str)
+  (let ((Len (length str)))
+	(do ((i 1 (+ i 1))
+		 (acc 0))
+		((>= i len) acc)
+	  (when (char= (char str i) (char str (1- i)))
+		(incf acc)))))
+
+(dotimes (i (read))
+  (format t "~A~%" (make-alter (read-line))))
