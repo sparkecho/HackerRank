@@ -1,0 +1,12 @@
+Status of the unfinished questions
+
+Number of Binary Search Tree
+Pentagonal Numbers				 5/7 (two timeout)
+Bitter Chocolate
+Reverse Factorization
+Different Ways					 1/6 (five timeout)
+Dice Path
+Bangalore Bank
+Sherlock and the Maze
+Expressions
+Klotski
