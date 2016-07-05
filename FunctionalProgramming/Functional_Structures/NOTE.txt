@@ -1,0 +1,12 @@
+Status of the unfinished questions
+
+"Swap Nodes"
+"Prison Transport"					 9/10 (one timeout)
+"Substring Searching"				11/12 (one timeout)
+"Order exercises"
+"John and Fences"
+"Range Minimum Query"
+"Stock Prediction"
+"Mirko at the Construction Site"
+"Tree manager"
+"Fighting Armies"
