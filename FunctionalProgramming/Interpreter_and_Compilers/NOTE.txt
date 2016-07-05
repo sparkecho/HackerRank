@@ -1,0 +1,7 @@
+Status of the unfinished questions
+
+While Language
+Intuitive language
+Down With Abstractions
+Infer
+BrainF__k interpreter
