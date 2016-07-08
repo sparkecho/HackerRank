@@ -1,6 +1,8 @@
 (defun super-digit (n)
-  (cond ((< n 10) n)
-		(t (super-digit (digit-sum n)))))
+  (let ((sum (digit-sum n)))
+	(if (zerop sum)
+		9
+		sum)))
 
 
 (defun digit-sum (num)
@@ -12,7 +14,7 @@
 	(auxilary 0 num)))
 
 (defun build-number (n k)
-  (* k (digit-sum n)))
+  (* (rem k 9) (digit-sum (rem n 9))))
 
 (defun run (n k) (format t "~A" (super-digit (build-number n k))))
 
