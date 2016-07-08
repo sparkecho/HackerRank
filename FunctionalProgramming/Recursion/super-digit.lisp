@@ -4,15 +4,20 @@
 
 ;; i: number of digit
 (defun digit-sum (num i)
-  (if (< i 2)
-	  num
-	  (+ (rem num 10)
-		 (digit-sum (truncate num 10) (- i 1)))))
+  (labels ((auxilary (acc num i)
+			 (if (< i 1)
+				 acc
+				 (auxilary (+ acc (rem num 10))
+						   (truncate num 10)
+						   (- i 1)))))
+	(auxilary 0 num i)))
 
 (defun number-of-digit (num)
-  (if (< num 10)
-	  1
-	  (1+ (number-of-digit (truncate num 10)))))
+  (labels ((auxilary (acc num)
+			 (if (< num 10)
+				 acc
+				 (auxilary (1+ acc) (truncate num 10)))))
+	(auxilary 1 num)))
 
 (defun build-number (n k)
   (labels ((build-rec (acc n scale k)
